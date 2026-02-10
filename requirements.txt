@@ -1,6 +1,6 @@
 streamlit
-requests
-uvicorn
 fastapi
+uvicorn
 tensorflow
 numpy
+requests

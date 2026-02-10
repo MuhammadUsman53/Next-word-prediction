@@ -8,9 +8,17 @@ import os
 
 app = FastAPI()
 
-MODEL_FILE = "a:/Assignment/model/next_word_model.h5"
-TOKENIZER_FILE = "a:/Assignment/model/tokenizer.pickle"
+# MODEL_FILE = "a:/Assignment/model/next_word_model.h5"
+# TOKENIZER_FILE = "a:/Assignment/model/tokenizer.pickle"
+
+# Use relative paths for deployment
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_FILE = os.path.join(BASE_DIR, "../model/next_word_model.h5")
+TOKENIZER_FILE = os.path.join(BASE_DIR, "../model/tokenizer.pickle")
+
 SEQUENCE_LENGTH = 5 # Must match training
+
 
 model = None
 tokenizer = None

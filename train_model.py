@@ -10,10 +10,18 @@ import os
 
 # Configuration
 DATA_URL = "https://www.gutenberg.org/files/1661/1661-0.txt"
-DATA_FILE = "a:/Assignment/data/pak_rupee_data.txt"
+# DATA_FILE = "a:/Assignment/data/pak_rupee_data.txt"
+# MODEL_FILE = "a:/Assignment/model/next_word_model.h5"
+# TOKENIZER_FILE = "a:/Assignment/model/tokenizer.pickle"
 
-MODEL_FILE = "a:/Assignment/model/next_word_model.h5"
-TOKENIZER_FILE = "a:/Assignment/model/tokenizer.pickle"
+# Use relative paths for deployment
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(BASE_DIR, "../data/pak_rupee_data.txt")
+MODEL_FILE = os.path.join(BASE_DIR, "next_word_model.h5") # Save in same dir as script or ensure model dir exists
+TOKENIZER_FILE = os.path.join(BASE_DIR, "tokenizer.pickle")
+
+
 SEQUENCE_LENGTH = 5  # Reduced sequence length
 MAX_WORDS = 2500     # Increased vocab size
 EPOCHS = 50            # Increased epochs for small data

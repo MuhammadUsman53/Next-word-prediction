@@ -1,6 +1,4 @@
-streamlit
-requests
-uvicorn
 fastapi
+uvicorn
 tensorflow-cpu
 numpy<2.0.0
